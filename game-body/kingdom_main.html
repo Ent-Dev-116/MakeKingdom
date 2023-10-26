@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <link rel="stylesheet" href="bar.css">
+</head>
+<body>
+    <div class="actions">
+        <div class="content">
+            <div class="senter">
+                <picture id="action1"><img src="occupy.png"></picture>
+                <picture id="action2" onclick="RandDemo()"><img src="occupy.png"></picture>
+                <picture id="action3"><img src="occupy.png"></picture>
+            </div>
+            <div class="senter">
+                <div class="info_action">ok</div>
+                <div class="info_action">ok</div>
+                <div class="info_action">ok</div>
+            </div>
+        </div>
+        <div id="talking">
+            <p class="typewriter" id="talk">これはテストです</p>
+        </div>
+    </div>
+    <div class="buttons">
+        <picture><img title="次の会話、フェーズへ進む"  onclick="story()" src="play-button.png"></picture><picture><a href=""><img title="遊び方、カード一覧" src="bookmark.png"></a></picture><picture><img title="建造物を表示" src="house.png"></picture><picture><img title="ステータスを表示" src="histogram.png"></picture>
+    </div>
+    <div class="stas">
+    <div class="status">
+        <p class="info">trust</p>
+        <p class="box" id="tru-box"></p>
+        <div class="frame">
+            <div class="bar" id="tru-bar"></div>
+        </div>
+    </div>
+    <div class="status">
+        <p class="info">joy</p>
+        <p class="box" id="joy-box"></p>
+        <div class="frame">
+            <div class="bar" id="joy-bar"></div>
+        </div>
+    </div>
+    <div class="status">
+        <p class="info">population</p>
+        <p class="box" id="pop-box"></p>
+        <div class="frame">
+            <div class="bar" id="pop-bar"></div>
+        </div>
+    </div>
+    <div class="status">
+        <p class="info">force</p>
+        <p class="box" id="for-box"></p>
+        <div class="frame">
+            <div class="bar" id="for-bar"></div>
+        </div>
+    </div>
+    <div class="status">
+        <p class="info">economy</p>
+        <p class="box" id="eco-box"></p>
+        <div class="frame">
+            <div class="bar" id="eco-bar"></div>
+        </div>
+    </div>
+    </div>
+    <div class="bild">
+
+    </div>
+    <script src="bar.js"></script>
+</body>
+</html>
