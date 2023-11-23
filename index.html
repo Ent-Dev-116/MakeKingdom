@@ -1,4 +1,81 @@
-<script src="demo.js"></script>
-<picture><img src="./game-body/boss_andromeda_breathing.gif" width="140" height="auto"></picture>
-<picture><img src="./game-body/boss_antiswarm_breathing.gif" width="180" height="auto"></picture>
-<p><a href="./game-body/kingdom_main.html">ng</a></p>
+<!DOCTYPE html>
+<html lang="ja" id="display">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title></title>
+</head>
+<body id="display">
+
+    <audio id="sound">
+        <source src="./クリック音1.mp3" type="audio/mp3">
+    </audio>
+
+    <h1>Make kingdom</h1>
+
+    <div class="Lode" id="Lode">
+        <div class="spinner-box">
+            <div class="configure-border-1">  
+              <div class="configure-core"></div>
+            </div>  
+            <div class="configure-border-2">
+              <div class="configure-core"></div>
+            </div> 
+          </div>
+        
+        <h2 class="Lode_text">Now Loading...</h2>
+        
+    </div>
+
+    <div class="set" id="set" onclick="start()">
+        <div id="set_text">
+        <h2 class="Lode_text" id="position_set1" onclick="start()" style="font-size: 100px;right: 22vw;bottom: 40vh;text-shadow: 2px 2px 4px #b8ffff;">Make Kingdom</h2>
+        <h4 class="Lode_text" id="position_set2" onclick="start()" style="font-size: 30px;right: 30vw;bottom: 33vh;">どこかをクリックしてスタート</h4>
+        </div>
+    </div>
+
+    <div id="chars">
+    <div class="pass">
+        <label style="font-size: 30px;">How To Play</label><img id="how" src="./game-body/Img/other/HowTo.png" title="あそびかた">
+    <h2 style="margin: 5px 0;"><label>Pass</label><button class="button" onclick="PassCode()">Enter</button><input type="text" id="word"></input><button class="reset" onclick="Reset()">Save date reset</button></h2>
+    </div>
+    <div class="char-all" id="char-all">
+        
+    </div>
+    </div>
+
+    <div class="Locked" id="Locked">
+        <p id="LockInfo"></p>
+    </div>
+
+    <div id="menu" style="display: none;">
+    <div id="menu-right">
+        <div id="action"></div>
+        <button onclick="RemoveCard()" id="card" class="back" style="font-size: 1vw;">キャラクター詳細画面に戻る</button>
+        <button onclick="Click()" id="char" class="back" style="font-size: 1vw;">キャラ選択画面へ戻る</button>
+        <button onclick="Open()" class="enter" id="enter" style="font-size: 1vw;">このキャラクターで挑む！</button>
+    </div>
+    <div id="menu-center">
+        <span id="status"></span>
+        <span id="skill_t"></span>
+        <span id="skill"></span>
+        <span id="infomation_t"></span>
+        <span id="infomation"></span>
+    </div>
+    <div class="menu-icon">
+        <img id="icon" src="./game-body/Img/king_gif/King1_ObjectMaster.gif">
+    </div>
+    <div class="menu-info" id="menu-info">
+        <span id="Name"></span>
+        <span id="JapanName"></span>
+        <span id="One-Point"></span>
+        <span id="info"></span>
+    </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

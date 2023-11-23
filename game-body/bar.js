@@ -1,3 +1,4 @@
+
 //ID取得
 
 /**
@@ -133,16 +134,6 @@ let Random={
   
 }
 
-const act={
-  /**
-   * 写真パス
-   * @type {src}
-   */
-  pict:[
-    "./.pictuer/pict_action/occupy.png",
-  ],
-
-}
 /**
  * 基本使用しないSpeakを実現する関数
  * 
@@ -157,24 +148,18 @@ function play(str) {
       element.className = "typewriter";
     });
   });
-  talk.textContent=str;
+  talk.innerText=str;
 }
 
 //変数宣言
 /**整数の仮箱 */
 var int=0;
+/**ステージ管理 */
+var stage=0;
 //準備
 let params = new URLSearchParams(document.location.search);
 /**キャラクターナンバー */
 var url_char=Number(params.get("Charname"));
-
-
-
-
-
-function ClickDemo(){
-  story();
-}
 
 function RandDemo(){
   sta.trust=Random.Integer(200)-100;
@@ -186,10 +171,51 @@ function RandDemo(){
   sta.box();
 }
 
+/**
+ * 画像パス管理
+ */
+let img=[
+  "Img/action/戦車召喚.png"
+]
 
+/**
+ * 初めの導入ストーリの文章
+ */
+const string1=[
+  "君に今日から、国を作ってもらう。",
+  "ああ、安心したまえ。\n国への評価は可視化している。"
+];
+
+/**
+ * 次のステージに進む判定
+ * @param {Number} Bool 理論値
+ * @param {Number} Ture 成功値
+ */
+let StageNext=(Bool,Ture)=>{if(Bool==Ture)stage++}
+
+/******************************************************************
+ * 初めの呼ばれる関数たち
+ */
+//初めのディレイでのbarとbox同期
 setTimeout(function(){sta.bar();sta.box();}
 ,250);
+/**
+ * 
+ ******************************************************************/
+
+function Click(){
+  switch(stage){
+    case 0:
+      story();
+      break;
+    case 1:
+      console.log("ok");
+      break;
+    }
+}
 
 function story(){
-  play("これでいいのか？");
+  play(string1[int]);
+  int++;
+  StageNext(int,string1.length);
 }

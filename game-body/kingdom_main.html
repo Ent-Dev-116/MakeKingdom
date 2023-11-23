@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" id="display">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
     <link rel="stylesheet" href="bar.css">
 </head>
-<body>
+<body class="display">
     <div class="actions">
         <div class="content">
             <div class="senter">
-                <picture id="action1"><img src="occupy.png"></picture>
-                <picture id="action2" onclick="RandDemo()"><img src="occupy.png"></picture>
-                <picture id="action3"><img src="occupy.png"></picture>
+                <picture><img id="action1" src="Img/action/戦車召喚.png"></picture>
+                <picture onclick="RandDemo()"><img id="action2" src=""></picture>
+                <picture><img id="action3" src="./Img/action/戦車召喚.png"></picture>
             </div>
             <div class="senter">
                 <div class="info_action">ok</div>
@@ -23,11 +23,11 @@
             </div>
         </div>
         <div id="talking">
-            <p class="typewriter" id="talk">これはテストです</p>
+            <p id="talk">私は前任国王の亡霊だ。</p>
         </div>
     </div>
     <div class="buttons">
-        <picture><img title="次の会話、フェーズへ進む"  onclick="story()" src="play-button.png"></picture><picture><a href=""><img title="遊び方、カード一覧" src="bookmark.png"></a></picture><picture><img title="建造物を表示" src="house.png"></picture><picture><img title="ステータスを表示" src="histogram.png"></picture>
+        <picture><img title="次の会話、フェーズへ進む"  onclick="Click()" src="./Img/other/NextStory.png"></picture><picture><img onclick="link()" title="遊び方、カード一覧" src="./Img/other/HowTo.png"></picture><picture><img title="建造物を表示" src="./Img/other/Builds.png"></picture><picture><img title="ステータスを表示" src="./Img/other/StatusDate.png"></picture>
     </div>
     <div class="stas">
     <div class="status">

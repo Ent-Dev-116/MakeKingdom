@@ -92,7 +92,7 @@ img{
 }
 
 body {
-   background-image:url("../.pictuer/back_img/kingdom.jpg");
+   background-image:url("./Img/other/BackImg.jpg");
    background-size: cover;
    background-repeat: no-repeat;
    background-color: black;
@@ -157,19 +157,8 @@ body {
     display: none;
 }
 
-@keyframes typing{
-    0% { width: 0%; }
-    100% { width: 11em; }
-  }
 
 #talking>p{
     margin: 0px;
+    width: 100%;
 }
-
-  .typewriter{
-    width: 0;
-    overflow: hidden; /*はみ出た要素を非表示に*/
-    white-space: nowrap; /*1行に*/
-    animation: typing 3s steps(11, end) forwards, cursol 1s step-end infinite;
-  /*animation: アニメーション名｜時間｜分割数｜ループ */
-  }

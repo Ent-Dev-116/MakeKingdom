@@ -1,0 +1,427 @@
+body{
+    background-repeat:repeat-y;
+    background-size: cover;
+    background-image: url(./game-body/Img/other/Backimg_index.jpg);
+    background-position-y: 8px;
+    background-color: rgb(70,0,60);
+}
+
+h1 {
+  padding: 0.5em;
+  font-size: 5vh;
+  height: 6vh;
+  text-align: center;
+  background: rgba(200, 100, 100, 0.6);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.box-img{
+    border: 2px solid rgba(200,170,20,0.8);
+    background-color: rgba(170,170,170,0.8);
+    margin: 6px;
+    color: white;
+    cursor:pointer;
+}
+
+.box{
+    float:left;
+    display:block;
+}
+
+#menu-right{
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+    background-color: rgba(60,60,60,0.9);
+    border: 5px dashed wheat;
+    height: 80%;
+    width: 35%;
+    color: bisque;
+}
+
+#menu-center{
+    position: absolute;
+    right: 39%;
+    bottom: 5%;
+    overflow: scroll;
+    background-color: rgba(60,60,60,0.9);
+    border: 5px dashed wheat;
+    height: 80%;
+    width: 35%;
+}
+
+.menu-icon{
+    position: absolute;
+    right: 80%;
+    bottom: 60%;
+    background-color: rgba(70,70,70,0.9);
+    border: 2px solid yellow;
+    height: 25%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font-button{
+  font-size: 1em;
+}
+
+#menu-info{
+    position: absolute;
+    overflow: scroll;
+    right: 77%;
+    bottom: 5%;
+    background-color: rgba(10,10,10,0.9);
+    border: 2px solid yellow;
+    height: 50%;
+    width: 20%;
+    color: white;
+    padding: 2px;
+}
+
+#Name{
+    font-size: 25px;
+    color: yellow;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#JapanName{
+    font-size: 20px;
+    color: yellow;
+}
+
+#JapanName,#One-Point,#info{
+    font-family: "游明朝","Yu Mincho"; font-weight: lighter;
+}
+
+#One-Point{
+    font-size: 15px;
+}
+
+#info{
+    font-size: 12px;
+}
+
+#icon{
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.back {
+  margin-left: 2em;
+  margin-top: -9px;
+  float: left;
+  width: 15vw;
+  height: 4vh;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+}
+
+.backLock {
+  right:-3%;
+  bottom:0%;
+  position: absolute;
+  margin-left: 2em;
+  margin-top: -9px;
+  float: left;
+  width: 15vw;
+  height: 4vh;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.enter {
+  margin-top: -9px;
+  margin-right: 2em;
+  width: 15vw;
+  float: right;
+  height: 4vh;
+  background-color: black;
+  color: aqua;
+  cursor: pointer;
+}
+
+input{
+    margin-left: 3px;
+    background-color: brown;
+    color: bisque;
+}
+
+label{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    color: wheat;
+    margin-right: 10px;
+}
+
+#how{
+    height: 50px;
+    margin-top: 1%;
+    align-items: center;
+    cursor:pointer;
+}
+
+.pass{
+    background-color: rgba(0,0,0,0.5);
+    border: 2px solid wheat;
+}
+
+.char-all{
+    margin-top: 5px;
+    overflow: scroll;
+    height: 450px;
+    width: 100%;
+}
+
+.c{
+    display: none;
+}
+
+body::-webkit-scrollbar,#menu-center::-webkit-scrollbar,#menu-info::-webkit-scrollbar,.char-all::-webkit-scrollbar,.Locked::-webkit-scrollbar{
+    display: none;
+}
+
+.Locked{
+    display: none;
+    position: absolute;
+    right: 1%;
+    z-index: 1;
+    bottom: 5%;
+    overflow: scroll;
+    height: 80%;
+    width: 98%;
+    background-color: rgba(0,0,0,0.7);
+    border: 2px solid wheat;
+}
+
+#LockInfo{
+    font-size: 3em;
+    text-align: center;
+    color: white;
+    font-family: "游明朝","Yu Mincho"; font-weight: lighter;
+}
+
+.reset{
+    margin-left: 60px;
+    background-color: aqua
+}
+
+.button{
+    background-color: aqua;
+}
+
+
+
+.spinner-box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+
+  .configure-border-1 {
+    width: 115px;
+    height: 115px;
+    padding: 3px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fb5b53;
+    animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+  }
+  
+  .configure-border-2 {
+    width: 115px;
+    height: 115px;
+    padding: 3px;
+    left: -115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(63,249,220);
+    transform: rotate(45deg);
+    animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+  }
+  
+  .configure-core {
+    width: 100%;
+    height: 100%;
+    background-color: #1d2630;
+  }
+
+  @keyframes configure-clockwise {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes configure-xclockwise {
+    0% {
+      transform: rotate(45deg);
+    }
+    25% {
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(-135deg);
+    }
+    75% {
+      transform: rotate(-225deg);
+    }
+    100% {
+      transform: rotate(-315deg);
+    }
+  }
+
+  .Lode_dis{
+    overflow: hidden
+  }
+
+  .Lode{
+    display: none;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgb(30, 0, 40);
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+  }
+
+  .set{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgb(30, 0, 40);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+  }
+
+  .spinner-box{
+    position: absolute;
+    right: 0vw;
+    bottom: 0.5vh;
+  }
+  .Lode_text{
+    position: absolute;
+    right: 2vw;
+    bottom: -2vh;
+    font-size: 40px;
+    color: aqua;
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
+
+  .position_set1{
+    right: 4vw;
+    bottom: 4vh;
+  }
+
+  .position_set2{
+    right: 4vw;
+    bottom: 4vh;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fade-out {
+    animation: fadeOut 2s;
+  }
+
+  .fade-in{
+    animation: fadeIn 2s;
+  }
+
+#menu-right,#menu-center{
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#status{
+    color: bisque;
+    font-size: 25px;
+    font-family:"游明朝","Yu Mincho";
+}
+
+#infomation_t,#skill_t{
+    font-size: 45px;
+    color: aqua;
+}
+
+#infomation,#skill{
+    font-size: 20px;
+    color: aquamarine;
+    font-family:"游明朝","Yu Mincho";
+}
+
+.char-all{
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+.char{
+    width: 190px;
+}
+
+.card{
+    width: 84px;
+}
+
+figcaption {
+  width: 195px;
+  font-size: 15px;
+  margin-top: -15px;
+  margin-left: 5px;
+  background-color: rgba(100,100,100,0.6);
+  color: azure;
+  height: 19px;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+}
+
+#action{
+    overflow: scroll;
+    height: 80%;
+    width: 90%;
+    margin: 1em auto;
+    border: #1d2630 dashed 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#action::-webkit-scrollbar{
+    display: none;
+}
