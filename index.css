@@ -332,14 +332,19 @@ body::-webkit-scrollbar,#menu-center::-webkit-scrollbar,#menu-info::-webkit-scro
     font-family: 'Alegreya Sans SC', sans-serif;
   }
 
-  .position_set1{
-    right: 4vw;
-    bottom: 4vh;
+  #position_set1{
+    text-shadow: 2px 2px 4px #b8ffff;
+    width: 61vw;
+    font-size: 10vw;
+    right: 19vw;
+    bottom: 40vh;
   }
 
-  .position_set2{
-    right: 4vw;
-    bottom: 4vh;
+  #position_set2{
+    font-size: 3.1vw;
+    right: 27vw;
+    bottom: 37vh;
+    width: 44vw;
   }
 
   @keyframes fadeOut {

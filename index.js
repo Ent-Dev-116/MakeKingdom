@@ -1,6 +1,7 @@
 var Date=Array(28);
 var char;
 var int=0;
+var OK=0;
 
 /**キャラクター解放の有無保存用配列 */
 const lock = [];
@@ -208,40 +209,10 @@ function Open(){
     window.open(url_string);
 }
 
-function PassCode(){
-    var check;
-    const pass = document.getElementById('word');
-    if(pass.value=="all-char-open!!"){
-        for(var i=0;i<Serect.Info.Unlock.length;i++)
-            Serect.Info.Unlock[i]=1;
-        LockCheck();
-        alert("let's go!!");
-        for(var i=0;i<Serect.Info.Unlock.length;i++)
-            Date[i]=1;
-        check=1;
-    }else{
-        for(var i=4;i<Serect.Info.Unlock.length;i++){
-            if(pass.value==Serect.Info.Path[i]){
-                Serect.Info.Unlock[i]=1;
-                LockCheck();
-                alert('開放：['+Serect.Name[i][0]+']が、解放されました。');
-                Date[i]=1;
-                check=1;
-            }
-        }
-    }
-    if(check!=1){
-        LockCheck();
-        alert('失敗：パスコード認証に失敗しました。');
-    }
-    save();
-    check=0;
-}
-
 
 function LockCheck(){
     for(var i=4;i<Serect.Info.Unlock.length;i++){
-        if(Serect.Info.Unlock[i]!=1){
+        if(Serect.Info.Unlock[i]!==1){
            lock[i-4].style.backgroundColor = "rgba(40,40,40,0.8)";
         }else{
            lock[i-4].style.backgroundColor = "rgba(170,170,170,0.8)";
@@ -495,8 +466,11 @@ for(var i=0;i<Date.length;i++){
     }
 }
 
-//リセット処理
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*実体として実行される処理群*/
+
 function Reset(){
+    SoundPlay();
     var result = window.confirm('本当にデータを消去しますか？');
     if(result==true){
         localStorage.clear();
@@ -505,9 +479,45 @@ function Reset(){
     }
 }
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*実体として実行される処理群*/
+function PassCode(){
+    console.log(Serect.Name);
+    console.log(Serect.Info.Unlock);
+    SoundPlay();
+    var check;
+    const pass = document.getElementById('word');
+    if(pass.value=="all-char-open!!"){
+        for(var i=0;i<Serect.Info.Unlock.length;i++)
+            Serect.Info.Unlock[i]=1;
+        LockCheck();
+        alert("let's go!!");
+        for(var i=0;i<Serect.Info.Unlock.length;i++)
+            Date[i]=1;
+        check=1;
+    }else if(pass.value!=="three-lock"){
+        for(var i=4;i<Serect.Info.Unlock.length;i++){
+            if(pass.value==Serect.Info.Path[i]){
+                Serect.Info.Unlock[i]=1;
+                LockCheck();
+                alert('開放：['+Serect.Name[i][0]+']が、解放されました。');
+                Date[i]=1;
+                check=1;
+            }
+        }
+    }
+    if(Date[22]!=1&&Serect.Info.Unlock[6]===Serect.Info.Unlock[14]&&Serect.Info.Unlock[14]===Serect.Info.Unlock[20]&&Serect.Info.Unlock[20]===1){
+        Serect.Info.Unlock[22]=1;
+        LockCheck();
+        alert('開放：['+Serect.Name[22][0]+']が、解放されました。');
+        Date[22]=1;
+        check=1;
+    }
+    if(check!=1){
+        LockCheck();
+        alert('失敗：パスコード認証に失敗しました。');
+    }
+    save();
+    check=0;
+}
 
 function Click(Who){
     SoundPlay();
@@ -571,6 +581,7 @@ async function Setting(){
     await awaitSetting();
     Lode();
     LodeID();
+    console.log(lock);
     LockCheck();
     save();
     onLode(1);
@@ -578,9 +589,12 @@ async function Setting(){
 
 function start(){
     starting();
-    var audio = new Audio('ホーム音楽1.mp3');
-    audio.loop = true;
-    audio.play();
+    if(OK!=1){
+        var audio = new Audio('ホーム音楽1.mp3');
+        audio.loop = true;
+        audio.play();
+    }
+    OK=1;
     dis.className="";
     card_button.style.display="none";
 }
