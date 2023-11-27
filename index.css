@@ -334,17 +334,19 @@ body::-webkit-scrollbar,#menu-center::-webkit-scrollbar,#menu-info::-webkit-scro
 
   #position_set1{
     text-shadow: 2px 2px 4px #b8ffff;
-    width: 61vw;
-    font-size: 10vw;
-    right: 19vw;
-    bottom: 40vh;
+    width: 100vw;
+    font-size: 13vw;
+    right: auto;
+    padding-inline: 10vw;
+    bottom: 42vh;
   }
 
   #position_set2{
     font-size: 3.1vw;
-    right: 27vw;
+    right: auto;
     bottom: 37vh;
-    width: 44vw;
+    width: 100%;
+    padding-inline: 28vw;
   }
 
   @keyframes fadeOut {
