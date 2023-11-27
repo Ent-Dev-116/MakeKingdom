@@ -1,0 +1,20 @@
+body{
+    background-image: url(./backimg.gif);
+    background-color: rgb(70,0,60);
+}
+
+h1{
+    text-align: center;
+    position: relative;
+    padding: 0.3em 0.5em;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background: -webkit-linear-gradient(to top, rgba(237, 137, 255, 0.5), #c5ceff);
+    background: linear-gradient(to top, rgba(217, 97, 215, 0.5), #c5ceff);
+    color: #495193;
+}
+
+p{
+    width: 90vw;
+    height: 90vh;
+    background-color: #c5ceff;
+}

@@ -1,5 +1,5 @@
 /**ローカルストレージに送るデータ */
-var Date=Array(28);
+var Date;
 /**キャラクターの数値管理 */
 var char;
 /**スマホのオーディオハウリング防止 */
@@ -523,7 +523,6 @@ async function SetData() {
         Serect.Info.skill.push([data[i].skillname,data[i].skillinfo]);
         Serect.Info.deckInfo.push(data[i].deckinfo);
         Serect.Info.deck.push(data[i].deck);
-        DateString.push("save"+(i+1));
     }
     /*カードーソイ！*/
     for(var i=0;i<deck.length;i++){
@@ -541,8 +540,10 @@ async function SetData() {
         Deck.skill.pow.push(deck[i].s_pow);
         Deck.skill.num1.push([deck[i].s_kn1,deck[i].s_n1]);
         Deck.skill.num2.push([deck[i].s_kn2,deck[i].s_n2]);
+        DateString.push("save"+(i+1));
     }
     //ついでにデータをぶち込むようにDateをいじくる
+    Date=Array(Deck.length);
 }
 
 //セーブ処理
@@ -550,7 +551,6 @@ async function SetData() {
  * ローカルストレージにぶち込む関数
  */
 function save(){
-    console.log(DateString,Date);
     for(var i=0;i<Date.length;i++){
         localStorage.setItem(DateString[i],Date[i]);
     }
@@ -561,7 +561,6 @@ function save(){
  * ローカルストレージから呼び出す関数
  */
 function Lode(){
-    console.log(Date+"::"+Serect.Info.Unlock);
 for(var i=0;i<Date.length;i++){
     Date[i] = localStorage.getItem(DateString[i]);
         if(Date[i]==null && i<4){
@@ -573,7 +572,6 @@ for(var i=0;i<Date.length;i++){
             Serect.Info.Unlock[i]=1;
         }
     }
-    console.log(Date+"::"+Serect.Info.Unlock);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -641,10 +639,8 @@ function PassCode(){
     //セーブ
     save();
 
-    //リセット処理
+    //フラッグリセット
     check=0;
-    pass.value="";
-    pass.focus();
 }
 
 /**
@@ -673,7 +669,7 @@ function Click(Who){
     }else{
         //キャラクター選択画面に戻る
         Switch(0);
-        char_F=0;
+        card_F=0;
         int=0;
         char=Who;
         resetCard();
@@ -738,7 +734,6 @@ function RemoveCard(){
 async function awaitSetting(){
     onLode(0);
     await SetData();
-    console.log(Date+"::"+Serect.Info.Unlock);
     setHtml();
 }
 
@@ -782,12 +777,10 @@ document.addEventListener('keydown', (event)=>{
     if(card_F==1){
         //カードフラッグが立ったとき
         if(event.key=="ArrowLeft"&&card_P!=0){
-            SoundPlay();
             //左移動
             RemoveCard();
             ClickCard(Serect.Info.deck[char_P][card_P-1],card_P-1);
         }else if(event.key=="ArrowRight"&&card_F==1&&card_P!=31){
-            SoundPlay();
             //右移動
             RemoveCard();
             ClickCard(Serect.Info.deck[char_P][card_P+1],card_P+1);
@@ -795,27 +788,15 @@ document.addEventListener('keydown', (event)=>{
     }else if(char_F==1){
         //キャラクターフラッグが立ったとき
         if(event.key=="ArrowLeft"&&char_P!=0){
-            SoundPlay();
             //左移動
             Switch(0);
             resetCard();
             Click(char_P-1);
         }else if(event.key=="ArrowRight"&&char_P!=Serect.Name.length-1){
-            SoundPlay();
             //右移動
             Switch(0);
             resetCard();
             Click(char_P+1);
         }
-    }
-});
-
-/**
- * エンターキーで入力する処理
- */
-document.addEventListener('keydown', (event)=>{
-    if(event.key=="Enter"&&char_F==0&&OK==1){
-        SoundPlay();
-        PassCode();
     }
 });
