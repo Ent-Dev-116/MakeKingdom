@@ -772,6 +772,7 @@ function start(){
 }
 
 //ロードスタート
+mobile_no_scroll();
 dis.className="Lode_dis";
 Setting();
 
@@ -819,3 +820,14 @@ document.addEventListener('keydown', (event)=>{
         PassCode();
     }
 });
+
+/**
+* 拡大縮小禁止
+*/
+function mobile_no_scroll(event) {
+    // ２本指での操作の場合
+    if (event.touches.length >= 2) {
+        // デフォルトの動作をさせない
+        event.preventDefault();
+    }
+}
