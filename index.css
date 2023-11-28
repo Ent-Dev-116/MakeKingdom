@@ -4,6 +4,8 @@ body{
     background-image: url(./game-body/Img/other/Backimg_index.jpg);
     background-position-y: 8px;
     background-color: rgb(70,0,60);
+    width: 100vw;
+    height: 100vh;
 }
 
 h1 {
