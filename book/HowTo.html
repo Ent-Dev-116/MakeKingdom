@@ -6,12 +6,36 @@
     <title>How to play</title>
     <link rel="stylesheet" href="./HowTo.css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300" rel="stylesheet">
+    <link rel="icon" href="../game-body/Img/other/icon-Crown.ico">
+    <title>How To Play</title>
 </head>
 <body>
+    <audio id="sound">
+        <source src="../クリック音1.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="Lode" id="Lode">
+        <div class="spinner-box">
+            <div class="configure-border-1">  
+              <div class="configure-core"></div>
+            </div>  
+            <div class="configure-border-2">
+              <div class="configure-core"></div>
+            </div> 
+          </div>
+        
+        <h2 class="Lode_text">Now Loading...</h2>
+        
+    </div>
+
     <h1>How To Play</h1>
     <div class="posi">
-        <h5>How To Play</h5>
+        <h5 id="title">How To Play</h5>
+        <picture id="img-box"><img id="img" src="./HowTo-serect-img/char-info-card.png"></picture>
+        <p id="text"><span>なんだこれ</span></p>
         <div class="buttons"><button class="Back-button">&lt;Back</button><button class="Next-button">Next&gt;</button></div>
     </div>
+
+    <script src="HowTo.js"></script>
 </body>
 </html>

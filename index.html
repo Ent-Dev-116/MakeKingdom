@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" id="display">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="./game-body/Img/other/icon-Crown.ico">
     <title>Make Kingdom</title>
 </head>
+
 <body id="display">
 
     <audio id="sound">
@@ -19,33 +22,47 @@
 
     <div class="Lode" id="Lode">
         <div class="spinner-box">
-            <div class="configure-border-1">  
-              <div class="configure-core"></div>
-            </div>  
+            <div class="configure-border-1">
+                <div class="configure-core"></div>
+            </div>
             <div class="configure-border-2">
-              <div class="configure-core"></div>
-            </div> 
-          </div>
-        
+                <div class="configure-core"></div>
+            </div>
+        </div>
+
         <h2 class="Lode_text">Now Loading...</h2>
-        
+
     </div>
 
     <div class="set" id="set" onclick="start()">
         <div id="set_text">
-        <h2 class="Lode_text" id="position_set1" onclick="start()">Make Kingdom</h2>
-        <h4 class="Lode_text" id="position_set2" onclick="start()">どこかをクリックしてスタート</h4>
+            <h2 class="Lode_text" id="position_set1" onclick="start()">Make Kingdom</h2>
+            <h4 class="Lode_text" id="position_set2" onclick="start()">どこかをクリックしてスタート</h4>
         </div>
     </div>
 
     <div id="chars">
-    <div class="pass">
-        <label style="font-size: 30px;">How To Play</label><a href="./book/HowTo.html"><img id="how" src="./game-body/Img/other/HowTo.png" title="あそびかた"></a>
-    <h2 style="margin: 5px 0;"><label>Pass</label><button class="button" onclick="PassCode()">Enter</button><input type="text" id="word"></input><button class="reset" onclick="Reset()">Save date reset</button></h2>
-    </div>
-    <div class="char-all" id="char-all">
-        
-    </div>
+        <div class="pass">
+            <label style="font-size: 30px;">Character</label><img onclick="LookChange(0)" class="mode-chenge" id=""
+                src="./game-body/Img/other/character.png" title="実績を確認する">
+            <label style="font-size: 30px;">How To Play</label><a href="./book/HowTo.html" target="_blank"><img
+                    class="mode-chenge" src="./game-body/Img/other/HowTo.png" title="あそびかた"></a>
+            <label style="font-size: 30px;">Record</label><img onclick="LookChange(1)" class="mode-chenge" id=""
+                src="./game-body/Img/other/trophy-cup.png" title="実績を確認する">
+            <label style="font-size: 30px;">Dictionaly</label><img onclick="LookChange(2)" class="mode-chenge" id=""
+                src="./game-body/Img/other/card-random.png" title="カード図鑑">
+            <label style="font-size: 30px;">Backstory</label><img onclick="LookChange(3)" class="mode-chenge" id=""
+                src="./game-body/Img/other/quill-ink.png" title="バックストーリー"><br>
+            <label style="font-size: 30px;">Feedback</label><img onclick="LookChange(4)" class="mode-chenge" id=""
+                src="./game-body/Img/other/envelope.png" title="要望送信フォーム">
+            <img onclick="LookChange(5)" class="mode-chenge" id="" src="./game-body/Img/other/talk.png"
+                title="フォーム回答確認">
+            <h2 style="margin: 5px 0;"><label>Pass</label><button class="button"
+                    onclick="PassCode()">Enter</button><input type="text" id="word"></input><button class="reset"
+                    onclick="Reset()">Save date reset</button></h2>
+        </div>
+        <div class="char-all" id="char-all">
+        </div>
     </div>
 
     <div class="Locked" id="Locked">
@@ -53,30 +70,74 @@
     </div>
 
     <div id="menu" style="display: none;">
-    <div id="menu-right">
-        <div id="action"></div>
-        <button onclick="RemoveCard()" id="card" class="back" style="font-size: 1vw;">キャラクター詳細画面に戻る</button>
-        <button onclick="Click()" id="char" class="back" style="font-size: 1vw;">キャラ選択画面へ戻る</button>
-        <button onclick="Open()" class="enter" id="enter" style="font-size: 1vw;">このキャラクターで挑む！</button>
+        <div id="menu-right">
+            <div id="action"></div>
+            <button onclick="RemoveCard()" id="card" class="back" style="font-size: 1vw;">キャラクター詳細画面に戻る</button>
+            <button onclick="Click()" id="char" class="back" style="font-size: 1vw;">キャラ選択画面へ戻る</button>
+            <!--onclick="Open()"-->
+            <a href="./game-body/kingdom_main.html"><button onclick="" class="enter" id="enter"
+                    style="font-size: 1vw;">このキャラクターで挑む！</button></a>
+        </div>
+        <div id="menu-center">
+            <span id="status"></span>
+            <span id="skill_t"></span>
+            <span id="skill"></span>
+            <span id="infomation_t"></span>
+            <span id="infomation"></span>
+        </div>
+        <div class="menu-icon">
+            <img id="icon" src="./game-body/Img/king_gif/King1_ObjectMaster.gif">
+        </div>
+        <div class="menu-info" id="menu-info">
+            <span id="Name"></span>
+            <span id="JapanName"></span>
+            <span id="One-Point"></span>
+            <span id="info"></span>
+        </div>
     </div>
-    <div id="menu-center">
-        <span id="status"></span>
-        <span id="skill_t"></span>
-        <span id="skill"></span>
-        <span id="infomation_t"></span>
-        <span id="infomation"></span>
+
+    <div class="char-all" id="record" style="overflow: auto;display:none;">
+        <div id="record-img"></div>
+        <div class="pass" id="record-info"></div>
     </div>
-    <div class="menu-icon">
-        <img id="icon" src="./game-body/Img/king_gif/King1_ObjectMaster.gif">
+
+    <div class="char-all" id="card-dictionaly" style="overflow: auto;display:none;">
+        <div id="card-dictionaly-img"></div>
+        <div class="pass" id="card-dictionaly-info"></div>
     </div>
-    <div class="menu-info" id="menu-info">
-        <span id="Name"></span>
-        <span id="JapanName"></span>
-        <span id="One-Point"></span>
-        <span id="info"></span>
+
+    <div class="char-all" id="comuni" style="overflow: auto;display:none;">
+        <h1 style="margin-top: -15px;">質問要望コーナー</h1>
+        <form method="post"
+            action="https://script.google.com/macros/s/AKfycbzGYGIoSq3znwTeBJ5ZMDB_fNe6B-_60jz03DkBHLrB7rsxtekuxhBiuizbiGbgUVWP3g/exec"
+            target="_blank">
+            <p>
+                <label>ユーザーネーム<br><input type="text" name="name" value="とある国王"
+                        style="margin-left: 10px;background-color: rgb(20, 20, 220);"></label>
+            </p>
+            <p>
+                <label>質問要望感想<br><textarea name="quest" style="margin-left: 10px;height: 200px;width: 800px;">テキストを消して、質問や要望などをお書きください!
+感想などでも嬉しいです!
+ユーザーネームも変更可能です!</textarea></label>
+            </p>
+            <p>
+                <label>※この送信を押すと、返答が着次第公開されます。それでもよろしければ送信してください。</label>
+                <br><input type="submit" value="送信">
+            </p>
+        </form>
     </div>
+
+    <div class="char-all" id="Feedback" style="overflow: auto;display:none;">
+        <h1 style="margin-top: -15px;">質問要望コーナーの回答！</h1>
+        <div id="answers"></div>
+    </div>
+
+    <div class="char-all" id="pdf" style="overflow: auto;display:none;">
+        <div id="storys"></div>
     </div>
 
     <script src="index.js"></script>
 </body>
+
+
 </html>

@@ -15,18 +15,8 @@ h1{
 
 .posi{
     position:relative;
-    height: 83vh;
+    height: 70vh;
     background-color: rgba(100, 100, 100, 0.5);
-}
-
-h4{
-    position: absolute;
-    bottom: 100px;
-    text-align: center;
-    padding: 0.3em 0.5em;
-    background: -webkit-linear-gradient(to top, rgba(237, 137, 255, 0.5), #c5ceff);
-    background: linear-gradient(to top, rgba(217, 97, 215, 0.5), #c5ceff);
-    color: #495193;
 }
 
 .buttons{
@@ -43,6 +33,143 @@ h4{
 }
 
 h5{
-    margin: 3px;
-    background-color: rgba(100, 100, 100, 0.75);
+    font-size: 1vw;
+    text-align: center;
+    padding: 0.5em;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    color: #010101;/*文字色*/
+    background: #97c2fa;/*背景色*/
+    border-bottom: solid 3px #516ab6;/*下線*/
+}
+
+img{
+    width: 15vw;
+    margin: 0 43%;
+}
+
+@keyframes configure-clockwise {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes configure-xclockwise {
+    0% {
+      transform: rotate(45deg);
+    }
+    25% {
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(-135deg);
+    }
+    75% {
+      transform: rotate(-225deg);
+    }
+    100% {
+      transform: rotate(-315deg);
+    }
+  }
+
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .Lode{
+    display: none;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgb(30, 0, 40);
+    width: 120vw;
+    height: 120vh;
+    z-index: 4;
+  }
+
+  .spinner-box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    right: 0vw;
+    bottom: 0.5vh;  
+}
+
+.configure-border-1 {
+    width: 115px;
+    height: 115px;
+    padding: 3px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fb5b53;
+    animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+  }
+
+  .configure-border-2 {
+    width: 115px;
+    height: 115px;
+    padding: 3px;
+    left: -115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(63,249,220);
+    transform: rotate(45deg);
+    animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+  }
+
+  .configure-core {
+    width: 100%;
+    height: 100%;
+    background-color: #1d2630;
+  }
+
+  .Lode_text{
+    position: absolute;
+    right: 2vw;
+    bottom: -2vh;
+    font-size: 40px;
+    color: aqua;
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+.fade-out {
+    animation: fadeOut 2s;
+  }
+
+p{
+    font-size: 1.5vw;
+    color: white;
+    text-shadow: 2px 2px 4px #b8ffff;
 }

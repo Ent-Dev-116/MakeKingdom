@@ -6,59 +6,92 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
-    <link rel="stylesheet" href="bar.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="icon" href="./Img/other/icon-Crown.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Make Kingdom</title>
 </head>
-<body class="display">
-    <div class="actions">
+<body id="dis" class="bodying">
+
+    <audio id="sound">
+        <source src="./クリック音1.mp3" type="audio/mp3">
+    </audio>
+    <audio id="pow-SE">
+        <source src="./特殊効果.mp3" type="audio/mp3">
+    </audio>
+    <audio id="card-SE">
+        <source src="./カード.mp3" type="audio/mp3">
+    </audio>
+    
+
+    <div class="Lode" id="Lode">
+        <div class="spinner-box">
+            <div class="configure-border-1">  
+              <div class="configure-core"></div>
+            </div>  
+            <div class="configure-border-2">
+              <div class="configure-core"></div>
+            </div> 
+          </div>
+        
+        <h2 class="Lode_text">Now Loading...</h2>
+        
+    </div>
+
+    <div class="actions" id="actions">
         <div class="content">
-            <div class="senter">
-                <picture><img id="action1" src="Img/action/戦車召喚.png"></picture>
-                <picture onclick="RandDemo()"><img id="action2" src=""></picture>
-                <picture><img id="action3" src="./Img/action/戦車召喚.png"></picture>
+            <div id="Cardlist" class="senter">
+                <picture onclick="" id="click1" style="display: none;"><img id="action1" src=""></picture>
+                <picture onclick="" id="click2" style="display: none;"><img id="action2" src=""></picture>
+                <picture onclick="" id="click3" style="display: none;"><img id="action3" src=""></picture>
+                <picture onclick="" id="click4" style="display: none;"><img id="action4" src=""></picture>
+                <picture onclick="" id="click5" style="display: none;"><img id="action5" src=""></picture>
             </div>
             <div class="senter">
-                <div class="info_action">ok</div>
-                <div class="info_action">ok</div>
-                <div class="info_action">ok</div>
+                <div class="info_action" id="info_action1">ok</div>
+                <div class="info_action" id="info_action2">ok</div>
+                <div class="info_action" id="info_action3">ok</div>
+                <div class="info_action" id="info_action4">ok</div>
+                <div class="info_action" id="info_action5">ok</div>
             </div>
         </div>
         <div id="talking">
-            <p id="talk">私は前任国王の亡霊だ。</p>
+            <p id="talk">私は前任国王の亡霊だ。（再生マークのアイコンをクリックして、話を進める）</p>
         </div>
     </div>
-    <div class="buttons">
-        <picture><img title="次の会話、フェーズへ進む"  onclick="Click()" src="./Img/other/NextStory.png"></picture><picture><img onclick="link()" title="遊び方、カード一覧" src="./Img/other/HowTo.png"></picture><picture><img title="建造物を表示" src="./Img/other/Builds.png"></picture><picture><img title="ステータスを表示" src="./Img/other/StatusDate.png"></picture>
+    <div class="buttons" id="buttons">
+        <picture><img title="次の会話、フェーズへ進む"  onclick="ClickStory()" src="./Img/other/NextStory.png"></picture><picture><img onclick="StrLog()" id="rog" title="ログを確認" src="./Img/other/HowTo.png"></picture><picture><img onclick="bilding()" title="建造物を表示" src="./Img/other/Builds.png"></picture><picture><img onclick="Default()" title="ステータスを表示" src="./Img/other/StatusDate.png"></picture>
     </div>
-    <div class="stas">
-    <div class="status">
+    <div class="stas" id="stats">
+    <div class="status" id="trust">
         <p class="info">trust</p>
         <p class="box" id="tru-box"></p>
         <div class="frame">
             <div class="bar" id="tru-bar"></div>
         </div>
     </div>
-    <div class="status">
+    <div class="status" id="joy">
         <p class="info">joy</p>
         <p class="box" id="joy-box"></p>
         <div class="frame">
             <div class="bar" id="joy-bar"></div>
         </div>
     </div>
-    <div class="status">
+    <div class="status" id="population">
         <p class="info">population</p>
         <p class="box" id="pop-box"></p>
         <div class="frame">
             <div class="bar" id="pop-bar"></div>
         </div>
     </div>
-    <div class="status">
+    <div class="status" id="force">
         <p class="info">force</p>
         <p class="box" id="for-box"></p>
         <div class="frame">
             <div class="bar" id="for-bar"></div>
         </div>
     </div>
-    <div class="status">
+    <div class="status" id="economy">
         <p class="info">economy</p>
         <p class="box" id="eco-box"></p>
         <div class="frame">
@@ -69,6 +102,6 @@
     <div class="bild">
 
     </div>
-    <script src="bar.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
